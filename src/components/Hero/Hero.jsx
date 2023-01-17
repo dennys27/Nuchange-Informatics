@@ -146,14 +146,7 @@ const Hero = () => {
     }
     
   return (
-    <Box
-      sx={{
-        display: "block",
-        alignItems: "center",
-        marginTop: "30px",
-        marginBottom: "100px",
-      }}
-    >
+    <>
       <Container
         sx={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
       >
@@ -247,56 +240,102 @@ const Hero = () => {
         >
           Generate
         </Button>
-        <Button onClick={()=>handleClear()} sx={{ margin: "20px" }} variant="contained">
+        <Button
+          onClick={() => handleClear()}
+          sx={{ margin: "20px" }}
+          variant="contained"
+        >
           Clear
         </Button>
       </Box>
 
       {/* tokens */}
-      <Box>
-        
-    </Box>
-      <Box
-        sx={{
-          width: "100%",
-          display: "block",
-          justifyContent: "center",
-          alignItems:"center",
-          marginTop: "50px",
-          marginLeft:"40%"
+
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            
+          }}
+       
+          xs={6}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "50px",
+              
+            }}
+          >
+            <Box
+              style={{
+                height: "250px",
+                display: "flex",
+                padding: "10px",
+                flexWrap: "wrap",
+                width: `${bluewidth}px`,
+              }}
+            >
+              {blueMap.map((item, index) => (
+                <>{item}</>
+              ))}
+            </Box>
+          </Box>
+        </Grid>
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          xs={6}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "50px",
+              
+            }}
+          >
+            <Box
+              style={{
+                height: "250px",
+                display: "flex",
+                padding: "10px",
+                flexWrap: "wrap",
+                width: `${redwidth}px`,
+              }}
+            >
+              {redMap.map((item, index) => (
+                <>{item}</>
+              ))}
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+
+      {/* <Box
+        style={{
+          height: "250px",
+          display: "flex",
+          padding: "10px",
+          flexWrap: "wrap",
+          width: `${redwidth}px`,
+          marginLeft: "40%",
         }}
       >
-        <Box
-          
-          style={{
-            height: "250px",
-            display: "flex",
-            padding: "10px",
-            flexWrap: "wrap",
-            width: `${bluewidth}px`,
-          }}
-        >
-          {blueMap.map((item, index) => (
-            <>{item}</>
-          ))}
-        </Box>
-
-        <Box
-          
-          style={{
-            height: "250px",
-            display: "flex",
-            padding: "10px",
-            flexWrap: "wrap",
-            width: `${redwidth}px`,
-          }}
-        >
-          {redMap.map((item, index) => (
-            <>{item}</>
-          ))}
-        </Box>
-      </Box>
-    </Box>
+        {redMap.map((item, index) => (
+          <>{item}</>
+        ))}
+      </Box> */}
+    </>
   );
 }
 
